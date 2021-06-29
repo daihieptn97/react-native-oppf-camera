@@ -1,0 +1,425 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.funsdkdemo"
+    android:versionCode="200"
+    android:versionName="2.0.0" >
+
+    <!-- <uses-permission android:name="com.example.permission.RECEIVE_MY_BROADCAST" /> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <!-- 检测网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 如果您想获得客户端crash的报告, 需要添加这个权限 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <application
+        android:name="com.example.funsdkdemo.MyApplication"
+        android:allowBackup="true"
+        android:label="@string/app_name">
+        <activity
+            android:name="com.example.funsdkdemo.ActivityStartup"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideMain"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideUser"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideUserLogin"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideUserRegister"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideUserChangePassw"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideUserDebug"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideDevice"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideDeviceList"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideDeviceListAP"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideDeviceListLan"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideDeviceSNLogin"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideDeviceAddByUser"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideDeviceWifiConfig"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.monitor.ActivityGuideDeviceCamera"
+            android:configChanges="orientation|keyboardHidden|screenLayout|keyboard|screenSize"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.ActivityGuideDeviceSocket"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.ActivityGuideDeviceBulb"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.ActivityGuideDeviceSport"
+            android:configChanges="orientation|keyboardHidden|screenLayout|keyboard|screenSize"
+        >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.ActivityGuideDevicePictureList"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.alarm.ActivityGuideDeviceAlarmResult"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSetupEncode"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.settings.alarm.ActivityGuideDeviceSetupAlarm"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSetupRecord"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSetupCamera"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSetupExpert"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSetupStorage"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceChangePassw"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.ActivityGuideDeviceTransCom"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.ActivityGuideDeviceLanAlarm"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSetup"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.monitor.ActivityGuideDevicePreview"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.example.funsdkdemo.devices.settings.alarm.ActivityGuideDeviceSetupAlarmCenter"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSystemInfo"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.common.FileManagerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceDevFrontCtr"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSystemFunction"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideMedia"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityGuideTranscode"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.ActivityAbout" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.funsdkdemo.ActivityGuideUserInfo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.funsdkdemo.devices.monitor.ActivityGuideMediaRealPlay">
+            </activity>
+
+        <activity android:name=".ActivityGuideUserForgetPassw"/>
+        <activity android:name=".devices.ActivityGuideDeviceNormalPic"/>
+        <activity android:name=".devices.ActivityGuideDevicePicBrowser"/>
+        <activity android:name=".devices.ActivityGuideDeviceSportPicList"/>
+        <activity android:name=".devices.playback.ActivityGuideDeviceRecordList"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.google.zxing.activity.CaptureActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.example.funsdkdemo.devices.ActivityGuideDevicesSocketSetTask" >
+        </activity>
+        <activity android:name="com.example.funsdkdemo.devices.ActivityGuideDeviceSocketSetting"></activity>
+	<activity android:name="com.example.funsdkdemo.devices.ActivityGuideDevicesSocketAboutWork"></activity>
+        <activity android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSPVMNCfgJson"></activity>
+        <activity android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSetupJson"></activity>
+	<activity android:name="com.example.funsdkdemo.devices.ActivityGuideDevicesSettingStatusLed"></activity>
+        <activity android:name="com.example.funsdkdemo.devices.ActivityGuideDevicesSocketSensitiveSetting"></activity>
+        
+        <activity android:name="com.example.funsdkdemo.devices.ActivityDeviceFishEyeInfo"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.example.funsdkdemo.devices.settings.ActivityGuideDeviceSetupCameraFishEye"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".devices.lowpower.LowPowerDevActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".devices.settings.ActivityGuideDeviceSmart433" />
+        <activity android:name=".devices.settings.ActivityGuideDeviceDoorLock" />
+        <activity android:name=".devices.settings.ActivityGuideDeviceGetYUVData" />
+        <activity android:name=".devices.settings.ActivityGuideDeviceAPToWiFi" />
+        <activity android:name=".cloud.ActivityDevCloudPlayBack" />
+        <activity android:name=".cloud.ActivityDevCloudDate" />
+        <activity android:name=".devices.tour.view.TourActivity" />
+        <activity android:name=".devices.settings.alarm.ActivityAlarmTimeSet" />
+        <activity android:name=".devices.settings.alarm.ActivityAlarmSettingLabel" />
+        <activity android:name=".devices.settings.alarm.ActivityWeekSelect" />
+        <activity android:name=".devices.settings.ActivityHumanDetect" />
+        <activity android:name=".devices.settings.ActivityOneKeyMaskVideo" />
+        <activity android:name=".test.TestActivity" />
+        <activity android:name=".devices.settings.timingsleep.view.TimingSleepActivity" />
+        <activity android:name=".devices.settings.other.ActivityDeviceOtherConfigGet" />
+        <activity android:name=".devices.settings.intelligentvigilance.alert.view.AlertSetActivity" />
+        <activity android:name=".devices.settings.intelligentvigilance.view.IntelligentVigilanceActivity" />
+        <activity android:name=".devices.settings.remotectrl.view.DevRemoteCtrlActivity" />
+        <activity android:name=".cloud.CloudWebActivity" />
+        <activity android:name=".devices.settings.pir.view.PirSetActivity" />
+        <activity android:name=".devices.settings.alarm.ActivityAlarmSoundList" />
+        <activity android:name=".devices.settings.alarm.ActivityCustomAlarmSound" />
+        <activity android:name=".devices.settings.alarm.ActivitySelectChannel" />
+
+
+        <service android:name="com.example.funsdkdemo.alarm.ServiceGuidePushAlarmNotification">
+            <intent-filter>
+                <action android:name="com.example.funsdkdemo.ServiceGuidePushAlarmNotification" >
+                </action>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </service>
+        
+        <service android:name="com.example.funsdkdemo.alarm.ServiceGuideLanAlarmNotification">
+            <intent-filter>
+                <action android:name="com.example.funsdkdemo.ServiceGuideLanAlarmNotification" >
+                </action>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:uilib="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+
+    <com.xm.ui.widget.XTitleBar
+        android:id="@+id/xb_dev_remote_ctrl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/theme_color"
+        uilib:TitleText="@string/TR_Remote_Ctrl"
+        uilib:TitleTextColor="@android:color/white"
+        uilib:LeftBtn_Nor="@drawable/icon_back_normal"
+        uilib:LeftBtn_Sel="@drawable/icon_back_pressed"
+        uilib:RightTextColor="@android:color/white"/>
+
+    <com.lib.funsdk.support.widget.FunVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_below="@+id/xb_dev_remote_ctrl_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@+id/video_view">
+        <RelativeLayout
+            android:id="@+id/rl_remote_ctrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <!-- 上 -->
+
+            <ImageButton
+                android:id="@+id/remote_ctrl_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ptzup_selector" />
+            <!-- 左 -->
+
+            <ImageButton
+                android:id="@+id/remote_ctrl_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/remote_ctrl_center"
+                android:background="@drawable/ptzright_selector" />
+            <!-- 中 -->
+
+            <ImageButton
+                android:id="@+id/remote_ctrl_center"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@+id/remote_ctrl_left"
+                android:layout_below="@+id/remote_ctrl_up"
+                android:layout_centerInParent="true"
+                android:background="@null"/>
+            <!-- 下 -->
+
+            <ImageButton
+                android:id="@+id/remote_ctrl_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/remote_ctrl_center"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ptzdown_selector" />
+            <!-- 右 -->
+
+            <ImageButton
+                android:id="@+id/remote_ctrl_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ptzleft_selector" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/rl_remote_ctrl">
+            <Button
+                android:id="@+id/btn_left_click"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_normal"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:text="@string/TR_Left_Click"/>
+
+            <Button
+                android:id="@+id/btn_esc_click"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_normal"
+                android:layout_weight="1"
+                android:text="@string/TR_ESC_Click"
+                android:layout_margin="10dp"/>
+
+            <Button
+                android:id="@+id/btn_right_click"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_normal"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:text="@string/TR_Right_Click"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:uilib="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.xm.ui.widget.XTitleBar
+        android:id="@+id/xb_dev_alarm_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/theme_color"
+        uilib:TitleText="Intelligent_Vigilance"
+        uilib:TitleTextColor="@android:color/white"
+        uilib:LeftBtn_Nor="@drawable/icon_back_normal"
+        uilib:LeftBtn_Sel="@drawable/icon_back_pressed"
+        uilib:RightText="finish"
+        uilib:RightTextColor="@android:color/white"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.xm.ui.widget.ListSelectItem
+                android:id="@+id/lsi_human_detection_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                uilib:ImageRight1="@drawable/icon_checked_no"
+                uilib:ImageRight2="@drawable/icon_checked_yes"
+                uilib:Title="@string/human_detect"
+                uilib:ItemTitleColor="@color/default_normal_text_color"
+                uilib:LineColor="@color/line_color"/>
+
+            <com.xm.ui.widget.ListSelectItem
+                android:id="@+id/lsi_human_detection_track"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                uilib:ImageRight1="@drawable/icon_checked_no"
+                uilib:ImageRight2="@drawable/icon_checked_yes"
+                uilib:Title="@string/show_traces"
+                uilib:ItemTitleColor="@color/default_normal_text_color"
+                uilib:LineColor="@color/line_color"/>
+
+            <com.xm.ui.widget.ListSelectItem
+                android:id="@+id/lsi_human_detection_perimeter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                uilib:ImageRight1="@drawable/icon_checked_no"
+                uilib:ImageRight2="@drawable/icon_checked_yes"
+                uilib:Title="@string/perimeter_alert"
+                uilib:ItemTitleColor="@color/default_normal_text_color"
+                uilib:LineColor="@color/line_color"/>
+
+            <LinearLayout
+                android:id="@+id/ll_human_detection_perimeter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.xm.ui.widget.ListSelectItem
+                    android:id="@+id/lsi_human_detection_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    uilib:ImageRight1="@null"
+                    uilib:ImageRight2="@drawable/correct_sel"
+                    uilib:Title="@string/alert_line"
+                    uilib:ItemTitleColor="@color/default_normal_text_color"
+                    uilib:LineColor="@color/line_color"
+                    uilib:RightClickable="false"/>
+
+                <com.xm.ui.widget.ListSelectItem
+                    android:id="@+id/lsi_human_detection_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    uilib:ImageRight1="@null"
+                    uilib:ImageRight2="@drawable/correct_sel"
+                    uilib:Title="@string/alert_area"
+                    uilib:ItemTitleColor="@color/default_normal_text_color"
+                    uilib:LineColor="@color/line_color"
+                    uilib:RightClickable="false"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,15 +1,23 @@
 import * as React from 'react';
 
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-// import OppfCamera from 'react-native-oppf-camera';
+import OppfCamera from 'react-native-oppf-camera';
 
 export default function App() {
     // const [result, setResult] = React.useState<number | undefined>();
 
     React.useEffect(() => {
         // OppfCamera.multiply(3, 7).then(setResult);
+        console.log('DEBUG', OppfCamera);
+
+        OppfCamera.registerOnFunDeviceWiFiConfigListener((data) => {
+            console.log(data);
+        });
     }, []);
 
+    let onStartConfig = () => {
+        // OppfCamera.onSmartConfig("Hunonic T2_2Ghz", "66668888")
+    };
     return (
         <View style={styles.container}>
             <View style={{ marginHorizontal: 14 }}>
@@ -21,6 +29,7 @@ export default function App() {
                     placeholder={'password'} />
             </View>
             <TouchableOpacity
+                onPress={onStartConfig}
                 style={styles.buttonStyle}>
                 <Text>SmartConfig</Text>
             </TouchableOpacity>

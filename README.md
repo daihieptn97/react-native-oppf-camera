@@ -11,11 +11,7 @@ npm install react-native-oppf-camera
 ## Usage
 
 ```js
-import OppfCamera from "react-native-oppf-camera";
 
-// ...
-
-const result = await OppfCamera.multiply(3, 7);
 ```
 
 ## Contributing

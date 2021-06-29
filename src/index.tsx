@@ -1,7 +1,8 @@
 import { NativeModules } from 'react-native';
 
 type OppfCameraType = {
-  multiply(a: number, b: number): Promise<number>;
+    registerOnFunDeviceWiFiConfigListener: (callBack: (data: string) => void) => void;
+    onSmartConfig: (wifiName: string, passWifi: string) => void
 };
 
 const { OppfCamera } = NativeModules;

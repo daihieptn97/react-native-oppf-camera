@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:uilib="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/layoutRoot"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#f8f8f8"
+              android:orientation="vertical">
+
+    <com.xm.ui.widget.XTitleBar
+        android:id="@+id/timing_sleep_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/theme_color"
+        uilib:LeftBtn_Nor="@drawable/icon_back_normal"
+        uilib:LeftBtn_Sel="@drawable/icon_back_pressed"
+        uilib:TitleText="@string/Timing_Sleep"
+        uilib:TitleTextColor="@color/white"
+        uilib:RightText="@string/save"
+        uilib:RightTextColor="@color/white"/>
+
+    <com.xm.ui.widget.ListSelectItem
+        android:id="@+id/Open_Timing_Sleep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        uilib:ImageRight1="@drawable/icon_checked_no"
+        uilib:ImageRight2="@drawable/icon_checked_yes"
+        uilib:ItemTitleColor="@color/login_page_color"
+        uilib:LineColor="@color/line_color"
+        uilib:ItemTipColor="@color/hint_color"
+        uilib:Title="@string/Open_Timing_Sleep"
+        uilib:Tip="@string/Open_Timing_Sleep_Tips"/>
+
+    <LinearLayout
+        android:id="@+id/timing_sleep_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8f8f8"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.xm.ui.widget.ListSelectItem
+            android:id="@+id/timing_sleep_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            uilib:ItemTitleColor="@color/login_page_color"
+            uilib:LineColor="@color/line_color"
+            uilib:ItemTipColor="@color/hint_color"
+            uilib:Title="@string/Timing_Sleep_Repeat"
+            uilib:Cap=""
+            uilib:CapColor="@color/login_page_color"
+            uilib:ImageRight1="@drawable/local_next"
+            uilib:ImageRight2="@drawable/local_next"
+            android:background="@color/white"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:minHeight="45.5dp">
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/theme_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Sleep_Time" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.xm.ui.widget.ListSelectItem
+            android:id="@+id/start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            uilib:Cap=""
+            uilib:CapColor="@color/login_page_color"
+            uilib:ImageRight1="@drawable/local_next"
+            uilib:ImageRight2="@drawable/local_next"
+            uilib:ItemTipColor="@color/hint_color"
+            uilib:ItemTitleColor="@color/login_page_color"
+            uilib:LineColor="@color/line_color"
+            uilib:Title="@string/set_start"
+            android:background="@color/white"/>
+
+        <com.xm.ui.widget.ListSelectItem
+            android:id="@+id/end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            uilib:ImageRight1="@drawable/local_next"
+            uilib:ImageRight2="@drawable/local_next"
+            uilib:ItemTitleColor="@color/login_page_color"
+            uilib:LineColor="@color/line_color"
+            uilib:ItemTipColor="@color/hint_color"
+            uilib:Cap=""
+            uilib:CapColor="@color/login_page_color"
+            uilib:Title="@string/set_finish"
+            android:background="@color/white"/>
+    </LinearLayout>
+</LinearLayout>

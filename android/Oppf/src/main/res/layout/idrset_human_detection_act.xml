@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:uilib="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.xm.ui.widget.XTitleBar
+        android:id="@+id/pir_set_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/theme_color"
+        uilib:LeftBtn_Nor="@drawable/icon_back"
+        uilib:LeftBtn_Sel="@drawable/icon_back"
+        uilib:TitleText="@string/Body_Detect"
+        uilib:TitleTextColor="@color/white"
+        uilib:RightTextColor="@color/white"
+        />
+
+    <com.xm.ui.widget.ListSelectItem
+        android:id="@+id/detection_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        uilib:Title="@string/Body_Detect"
+        uilib:Cap=""
+        uilib:CapColor="@color/default_normal_text_color"
+        uilib:ItemTitleColor="@color/default_normal_text_color"
+        />
+        <com.xm.ui.widget.ListSelectItem
+            android:id="@+id/detection_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            uilib:Title="@string/Detection_duration"
+            uilib:Cap=""
+            uilib:CapColor="@color/default_normal_text_color"
+            uilib:ItemTitleColor="@color/default_normal_text_color"/>
+
+        <com.xm.ui.widget.ListSelectItem
+            android:id="@+id/pir_time_section_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            uilib:Title="@string/PIR_Detect_Time_Period"
+            uilib:Cap=""
+            uilib:CapColor="@color/default_normal_text_color"
+            uilib:ItemTitleColor="@color/default_normal_text_color"
+            />
+
+        <com.xm.ui.widget.ListSelectItem
+            android:id="@+id/pir_start_end_time_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            uilib:Title="@string/Start_End_Time"
+            uilib:Cap="00:00-23:59"
+            uilib:CapColor="@color/default_normal_text_color"
+            uilib:ItemTitleColor="@color/default_normal_text_color"
+            />
+
+        <com.xm.ui.widget.ListSelectItem
+            android:id="@+id/pir_week_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            uilib:Title="@string/Repeat"
+            uilib:Cap="every_day"
+            uilib:CapColor="@color/default_normal_text_color"
+            uilib:ItemTitleColor="@color/default_normal_text_color"
+            />
+
+    <com.xm.ui.widget.ListSelectItem
+        android:id="@+id/pir_sensitive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        uilib:Title="@string/pir_sensitive"
+        uilib:Cap="every_day"
+        uilib:CapColor="@color/default_normal_text_color"
+        uilib:ItemTitleColor="@color/default_normal_text_color"
+        />
+</LinearLayout>
