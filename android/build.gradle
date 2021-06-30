@@ -6,7 +6,7 @@ buildscript {
         }
 
         dependencies {
-            classpath 'com.android.tools.build:gradle:3.5.3'
+            classpath("com.android.tools.build:gradle:4.1.0")
         }
     }
 }
@@ -19,9 +19,9 @@ def safeExtGet(prop, fallback) {
 
 android {
     compileSdkVersion safeExtGet('OppfCamera_compileSdkVersion', 29)
-    buildToolsVersion safeExtGet('OppfCamera_buildToolsVersion', '29.0.2')
+    buildToolsVersion safeExtGet('OppfCamera_buildToolsVersion', '29.0.3')
     defaultConfig {
-        minSdkVersion safeExtGet('OppfCamera_minSdkVersion', 16)
+        minSdkVersion safeExtGet('OppfCamera_minSdkVersion', 21)
         targetSdkVersion safeExtGet('OppfCamera_targetSdkVersion', 29)
         versionCode 1
         versionName "1.0"
@@ -55,7 +55,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"
-//    implementation project(path: ':Oppf')  // From node_modules
+    implementation project(path: ':Oppf')  // From node_modules
 
     implementation 'com.google.code.gson:gson:2.8.7'
 }
