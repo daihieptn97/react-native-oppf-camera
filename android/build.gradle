@@ -28,11 +28,33 @@ android {
 
     }
 
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+
+
     buildTypes {
         release {
             minifyEnabled false
         }
     }
+
+    useLibrary 'org.apache.http.legacy'
+
     lintOptions {
         disable 'GradleCompatible'
     }
@@ -55,7 +77,23 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"
-    implementation project(path: ':Oppf')  // From node_modules
+//    implementation project(path: ':Oppf')  // From node_modules
 
     implementation 'com.google.code.gson:gson:2.8.7'
+
+
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:23.4.0'
+
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    implementation(name: 'xmuilibrary-release', ext: 'aar')
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation files('libs/LibFunSDK.jar')
+    implementation files('libs/fastjson-1.2.8.jar')
+    implementation files('libs/LibFishEye.jar')
+    implementation files('libs/LibFunSDK.jar')
+
 }
